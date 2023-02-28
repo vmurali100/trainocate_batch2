@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <label for="fname">First Name : </label>
+      <input type="text" name="" id="fname" /> <br />
+      <label for="">Last Name : </label>
+      <input type="text" name="" id="lname" /> <br />
+      <button type="button" onclick="addUser()">Add User</button>
+    </form>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody id="usersTable"></tbody>
+    </table>
+    <script>
+      var users = [];
+      function clearForm() {
+        document.getElementById("fname").value = "";
+        document.getElementById("lname").value = "";
+      }
+
+      function deleteUser(i){
+        var newUsers = users.filter((usr,index)=>{
+            return i !== index
+        })
+        displayUsers(newUsers)
+      }
+      function displayUsers(users) {
+        document.querySelector("tbody").innerHTML = "";
+        users.forEach((usr,i)=>{
+            var myTr = document.createElement("tr")
+            for(a in usr){
+                var myTd = document.createElement("td");
+                myTd.innerHTML = usr[a]
+                myTr.appendChild(myTd)
+            }
+
+            var editTd = document.createElement("td");
+            var editBtn = document.createElement("button");
+            editBtn.innerHTML = "Edit";
+            editTd.appendChild(editBtn)
+
+            var deleteTd = document.createElement("td");
+            var deleteBtn = document.createElement("button");
+            deleteBtn.innerHTML = "Delete";
+            deleteBtn.setAttribute("onclick","deleteUser("+i+")")
+            deleteTd.appendChild(deleteBtn);
+
+
+            myTr.appendChild(editTd)
+            myTr.appendChild(deleteTd)
+            document.querySelector("#usersTable").appendChild(myTr)
+        })
+      }
+      function addUser() {
+        var user = {
+          fname: document.getElementById("fname").value,
+          lname: document.getElementById("lname").value,
+        };
+        users.push(user);
+        displayUsers(users);
+        clearForm();
+      }
+    </script>
+  </body>
+</html>
