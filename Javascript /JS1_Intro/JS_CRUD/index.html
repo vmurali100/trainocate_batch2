@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <label for="fname">First Name : </label>
+      <input type="text" name="" id="fname" /> <br />
+      <label for="">Last Name : </label>
+      <input type="text" name="" id="lname" /> <br />
+      <button type="button" onclick="addUser()" id="addUserBtn">Add User</button>
+      <button type="button" onclick="updateUser()" id="updateUserBtn" style="display: none;">Update User</button>
+    </form>
+    <br>
+    <table border="1">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>ID</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody id="usersTable"></tbody>
+      </table>
+    <script src="./create.js"></script>
+  </body>
+</html>
