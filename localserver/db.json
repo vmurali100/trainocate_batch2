@@ -1,16 +1,5 @@
 {
-  "users": [
-    {
-      "fname": "Murali",
-      "lname": "Kumar",
-      "id": 1
-    },
-    {
-      "fname": "Ram",
-      "lname": "Ravi",
-      "id": 2
-    }
-  ],
+  "users": ["Ravi","Kumar"],
   "products": [],
   "students": []
 }
