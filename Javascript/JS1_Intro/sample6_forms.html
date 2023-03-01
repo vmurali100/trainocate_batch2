@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      table, td, tr, th {
+        border: 1px solid darkslategray;
+      }
+    </style>
   </head>
   <body>
     <form>
@@ -14,7 +19,7 @@
       <input type="text" name="" id="lname" /> <br />
       <button type="button" onclick="addUser()">Add User</button>
     </form>
-    <table border="1">
+    <table style="border-collapse: collapse;">
       <thead>
         <tr>
           <th>First Name</th>
