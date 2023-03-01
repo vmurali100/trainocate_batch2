@@ -1,1 +1,4 @@
-<p>person works!</p>
+<p>person works!- As Parent</p>
+<h2>Message Received From Child is : {{messageFromChild }}</h2>
+<hr>
+<app-employee (sendData)="getDataFromChild($event)"></app-employee>
