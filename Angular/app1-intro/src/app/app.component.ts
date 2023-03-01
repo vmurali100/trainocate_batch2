@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-interface Person {
+export interface Person {
   fname: string;
   lname: string;
 }
@@ -10,23 +10,29 @@ interface Person {
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  constructor(){
-    console.log("I will trigger when the Component getting Ready !!");
+  constructor() {
+    console.log('I will trigger when the Component getting Ready !!');
   }
-  title: string = 'Welcome to Angular Project !!';
-  person: Person = {
-    fname: 'Ram',
-    lname: 'Krishna',
+  myTitle: string = 'Welcome to Angular Project !!';
+  myPerson: Person = {
+    fname: '',
+    lname: '',
   };
-  users:string[] = ["Ram","Ravi","Sam"]
-  sayHello(a:string):void {}
-  
-  ngAfterViewInit(){
-    console.log("Component Just Initialized")
+  myUsers: string[] = ['Ram', 'Ravi', 'Sam'];
+  sayHello(a: string): void {}
+
+  ngAfterViewInit() {
+    console.log('Component Just Initialized');
   }
 
-  covertObjectIntoArray(obj:Person){
-    return Object.values(obj)
+  covertObjectIntoArray(obj: Person) {
+    return Object.values(obj).filter((val) => val !== '');
   }
 
+  showPerson() {
+    this.myPerson = {
+      fname: 'Ram',
+      lname: 'Kumar',
+    };
+  }
 }
