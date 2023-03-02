@@ -6,9 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./person.component.css']
 })
 export class PersonComponent {
-  messageFromChild :string=""
-  getDataFromChild(data:string){
-    console.log(data)
-    this.messageFromChild = data
+  messageFromChild: string = "";
+  getDataFromChild(data: string) {
+    console.log(data);
+    this.messageFromChild = data;
+  }
+  employeeCalledByChild: string = "";
+  callEmployeeFromChild(data: string) {
+    this.employeeCalledByChild = data;
   }
 }

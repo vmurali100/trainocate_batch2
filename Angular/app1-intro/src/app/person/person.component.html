@@ -1,4 +1,5 @@
-<p>person works!- As Parent</p>
+<p>Person Component- As Parent</p>
 <h2>Message Received From Child is : {{messageFromChild }}</h2>
+<h3>Employee called from Child is: {{employeeCalledByChild}}</h3>
 <hr>
-<app-employee (sendData)="getDataFromChild($event)"></app-employee>
+<app-employee (sendData)="getDataFromChild($event)" (callEmployeeByName)="callEmployeeFromChild($event)"></app-employee>

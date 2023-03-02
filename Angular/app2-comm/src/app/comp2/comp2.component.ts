@@ -18,4 +18,10 @@ export class Comp2Component {
       this.messageFromComp1 = response
     });
   }
+
+  message :string = "Welcome to Sibiling Components Communication !!! - Message from Comp2"
+  sendMessageFromComp2(){
+    console.log("sendMessageFromComp2 Trigged !!")
+    this.cs2.getAndSendData2(this.message)
+  }
 }
