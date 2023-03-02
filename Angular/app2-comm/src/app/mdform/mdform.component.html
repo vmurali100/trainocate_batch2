@@ -1,0 +1,20 @@
+<p>mdform works!</p>
+
+<form [formGroup]="userForm">
+    <label for="fname">First Name : </label>
+    <input type="text" name="fname"  formControlName="fname" > <br>
+    <label for="lname">Last Name : </label>
+    <input type="text" name="lname"  formControlName="lname" > <br>
+    <label for="country">Country : </label>
+    <select name="country" formControlName="country"  >
+        <option value="India">India</option>
+        <option value="Singapore">Singapore</option>
+        <option value="Malasia">Malasia</option>
+        <option value="Russia">Russia</option>
+        <option value="Srilanka">Srilanka</option>
+    </select> <br>
+    <button *ngIf="!isEdit" type="button" (click)="addUser()">Add User</button>
+    <button *ngIf="isEdit" type="button" (click)="updateUser()">Update User</button>
+</form>
+<hr>
+<app-mdchild [mdUsers]="users" (sendUser)="handleEdit($event)" (delUser)="handleDelUser($event)"></app-mdchild>
