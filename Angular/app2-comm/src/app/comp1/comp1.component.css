@@ -1,0 +1,5 @@
+tr, td {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 2px;
+}

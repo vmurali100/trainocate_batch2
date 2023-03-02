@@ -1,0 +1,25 @@
+<p>Parent form component:</p>
+<form #userForm="ngForm">
+    <table>
+        <tr>
+            <td><label for="fname">First Name: </label></td>
+            <td><input type="text" name="fname" [(ngModel)]="UserModel.fname"></td>
+        </tr>
+        <tr>
+            <td><label for="lname">Last Name: </label></td>
+            <td><input type="text" name="lname" [(ngModel)]="UserModel.lname"></td>
+        </tr>
+        <tr>
+            <td><label for="email">Email: </label></td>
+            <td><input type="text" name="email" [(ngModel)]="UserModel.email"></td>
+        </tr>
+        <tr>
+            <td><label for="mobile">Mobile: </label></td>
+            <td><input type="tel" name="mobile" [(ngModel)]="UserModel.mobile"></td>
+        </tr>
+    </table>
+
+    <button type="button" (click)="addUser(userForm)" *ngIf="!isEdit">Submit form</button>
+    <button type="button" (click)="updateUser()" *ngIf="isEdit">Update User</button>
+</form>
+<app-comp1 [formData]="users" (userFromChild)="editUser($event)"></app-comp1>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonService } from '../common.service';
 
 @Component({
@@ -26,4 +26,10 @@ export class Comp1Component {
     this.cs.getAndSendData(this.message)
   }
 
+  @Input() formData:any[] = [];
+  @Output() userFromChild = new EventEmitter();
+  editUser(data:any, i:number){
+    let userInfo = {data, i}
+    this.userFromChild.emit(userInfo);
+  }
 }

@@ -1,4 +1,25 @@
 <p>This is Component1</p>
 <p>Message From Comp 2 : {{messageFromComp2}}</p>
-
+<table style="border: 1px solid grey;">
+    <thead>
+        <tr>
+            <td>FirstName</td>
+            <td>LastName</td>
+            <td>Email</td>
+            <td>Phone</td>
+            <td>Edit</td>
+            <td>Delete</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of formData; let i = index;">
+            <td>{{user.fname}}</td>
+            <td>{{user.lname}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.mobile}}</td>
+            <td><button (click)="editUser(user, i)" >Edit</button></td>
+            <td><button>Delete</button></td>
+        </tr>
+    </tbody>
+</table>
 <button (click)="sendMessageFromComp1()">Send Message to - Comp2</button>
