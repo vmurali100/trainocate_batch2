@@ -1,0 +1,28 @@
+<p>child works!</p>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>First Name </th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    
+
+    <tbody >
+        <tr *ngFor="let usr of allusers">
+            <td>{{usr.fname}}</td>
+            <td>{{usr.lname}}</td>
+            <td>{{usr.country}}</td>
+            <td>
+                <button (click)="handleEdit(usr)">Edit</button>
+            </td>
+            <td>
+                <button>Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

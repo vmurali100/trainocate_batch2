@@ -1,0 +1,20 @@
+<p>parent works!</p>
+
+<form #userForm="ngForm">
+    <label for="fname">First Name : </label>
+    <input type="text" name="fname"  [(ngModel)]="userDetails.fname"> <br>
+    <label for="lname">Last Name : </label>
+    <input type="text" name="lname"  [(ngModel)]="userDetails.lname"> <br>
+    <label for="country">Country : </label>
+    <select name="country" [(ngModel)]="userDetails.country">
+        <option value="India">India</option>
+        <option value="Singapore">Singapore</option>
+        <option value="Malasia">Malasia</option>
+        <option value="Russia">Russia</option>
+        <option value="Srilanka">Srilanka</option>
+    </select> <br>
+    <button type="button" (click)="addUser(userForm)">Add User</button>
+</form>
+
+<hr>
+<app-child [allusers]="users" (editUser)="editUserInParent($event)"></app-child>
