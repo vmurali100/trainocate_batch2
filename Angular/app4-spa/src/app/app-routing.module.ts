@@ -7,15 +7,33 @@ import { PricingComponent } from './pricing/pricing.component';
 import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
-  { path: '', component: UsersComponent },
-  { path: 'about', component: AboutComponent },
   {
-    path: 'contact',
-    component: ContactComponent,
-    children: [{ path: ':myId', component: ContactdetailsComponent }],
+    path: '',
+    loadChildren: () =>
+      import('./users/users.module').then((m) => m.UsersModuele),
   },
 
-  { path: 'pricing', component: PricingComponent },
+  {
+    path: 'about',
+    loadChildren: () =>
+      import('./about/about.module').then((m) => m.AboutModule),
+  },
+
+  {
+    path: 'contact',
+    loadChildren: () =>
+      import('./contact/contact.module').then((m) => m.ContactModule),
+    // children: [{ path: ':myId', component: ContactdetailsComponent }],
+    // { path: '', component: UsersComponent },
+    // { path: 'about', component: AboutComponent },
+    // { path: 'pricing', component: PricingComponent },
+  },
+
+  {
+    path: 'pricing',
+    loadChildren: () =>
+      import('./pricing/pricing.module').then((m) => m.PricingModule),
+  },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
