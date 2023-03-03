@@ -1,5 +1,36 @@
 {
-  "users": ["Ravi","Kumar"],
+  "users": [
+    {
+      "id": 11,
+      "email": "SWieland@consectetur.org",
+      "username": "LNuccio",
+      "password": "ainIC"
+    },
+    {
+      "id": 12,
+      "email": "Savi@consectetur.org",
+      "username": "Savindar ",
+      "password": "Savi124"
+    },
+    {
+      "id": 14,
+      "username": "Sub",
+      "email": "Subhjit@aenean.io",
+      "password": "11111"
+    },
+    {
+      "id": 13,
+      "email": "murali@consectetur.org",
+      "username": "Ram ",
+      "password": "Ravi"
+    },
+    {
+      "id": "15",
+      "username": "murali",
+      "email": "vmurali100@gmail.com",
+      "password": "1122"
+    }
+  ],
   "products": [],
   "students": []
 }

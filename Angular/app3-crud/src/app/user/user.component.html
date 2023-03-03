@@ -1,0 +1,43 @@
+<p>user works!</p>
+<button (click)="getAllUsers()">Get All Users</button>
+<form [formGroup]="userForm">
+   <label for="di">ID : </label>
+   <input type="text" name="id" formControlName="id" > <br>
+   <label for="email">Email : </label>
+   <input type="text" name="" formControlName="email" > <br>
+   <label for="">User Name : </label> 
+   <input type="text" name="" formControlName="username" > <br>
+   <label for="">Password : </label>
+   <input type="text" name="" formControlName="password" > <br>
+   <button *ngIf="!isEdit" (click)="createUser()">Add User</button>
+   <button *ngIf="isEdit" (click)="updateUser()">Update User</button>
+</form>
+<br>
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID </th>
+            <th>Email</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    
+
+    <tbody >
+        <tr *ngFor="let usr of users;let i= index">
+            <td>{{usr.id}}</td>
+            <td>{{usr.email}}</td>
+            <td>{{usr.username}}</td>
+            <td>{{usr.password}}</td>
+            <td>
+                <button (click)="handleEdit(usr)">Edit</button>
+            </td>
+            <td>
+                <button (click)="deleteUser(usr)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
