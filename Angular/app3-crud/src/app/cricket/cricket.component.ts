@@ -13,4 +13,10 @@ export class CricketComponent {
       console.log(res)
     })
   }
+
+  getCricUsers(){
+    this.cs.getAllUsers().subscribe(res=>{
+      console.log(res)
+    })
+  }
 }

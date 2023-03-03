@@ -16,14 +16,19 @@ export class CricInterceptor implements HttpInterceptor {
     request: HttpRequest<unknown>,
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
-    let circRequest = request.clone({
-      headers: request.headers
-        .set(
-          'X-RapidAPI-Key',
-          'IXEUAUo6gSmshyDa71pLNljSwKHRp1xt8bqjsn089SWjJ1GyuX'
-        )
-        .set('X-RapidAPI-Host', 'cricbuzz-cricket.p.rapidapi.com'),
-    });
-    return next.handle(circRequest);
+    if(request.url.indexOf('cricbuzz-cricket') > -1){
+      let circRequest = request.clone({
+        headers: request.headers
+          .set(
+            'X-RapidAPI-Key',
+            'IXEUAUo6gSmshyDa71pLNljSwKHRp1xt8bqjsn089SWjJ1GyuX'
+          )
+          .set('X-RapidAPI-Host', 'cricbuzz-cricket.p.rapidapi.com'),
+      });
+      return next.handle(circRequest);
+    }else{
+     return next.handle(request)
+    }
+    
   }
 }
