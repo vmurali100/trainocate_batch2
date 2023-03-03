@@ -28,22 +28,6 @@
             <th>Delete</th>
         </tr>
     </thead>
-<<<<<<< Updated upstream
-    
-
-    <tbody >
-        <tr *ngFor="let usr of users;let i= index">
-            <td>{{usr.id}}</td>
-            <td>{{usr.email}}</td>
-            <td>{{usr.username}}</td>
-            <td>{{usr.password}}</td>
-            <td>
-                <button (click)="handleEdit(usr)">Edit</button>
-            </td>
-            <td>
-                <button (click)="deleteUser(usr)">Delete</button>
-            </td>
-=======
     <tbody id="usersTable" *ngFor="let user of allUsers; index as i">
         <tr>
             <td>{{user.fname}}</td>
@@ -53,7 +37,6 @@
             <td>{{user.mobile}}</td>
             <td><button (click)="editData(i)">Edit</button></td>
             <td><button (click)="deleteData(user.id)">Delete</button></td>
->>>>>>> Stashed changes
         </tr>
     </tbody>
 </table>
