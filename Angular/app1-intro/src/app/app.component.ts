@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 export interface Person {
   fname: string;
@@ -11,28 +11,23 @@ export interface Person {
 })
 export class AppComponent {
   constructor() {
-    console.log('I will trigger when the Component getting Ready !!');
+    console.log("I will trigger when the Component getting Ready !!");
   }
   myTitle: string = 'Welcome to Angular Project !!';
   myPerson: Person = {
     fname: '',
     lname: '',
   };
-  myUsers: string[] = ['Ram', 'Ravi', 'Sam'];
-  sayHello(a: string): void {}
+  users: string[] = ["Ram", "Ravi", "Sam"]
+  sayHello(a: string): void { }
 
   ngAfterViewInit() {
-    console.log('Component Just Initialized');
+    console.log("Component Just Initialized")
   }
+
+  ngOnInit() { console.log("OnInit"); }
 
   covertObjectIntoArray(obj: Person) {
-    return Object.values(obj).filter((val) => val !== '');
-  }
-
-  showPerson() {
-    this.myPerson = {
-      fname: 'Ram',
-      lname: 'Kumar',
-    };
+    return Object.values(obj);
   }
 }

@@ -1,20 +1,15 @@
 <p>mdform works!</p>
-
-<form [formGroup]="userForm">
+<form [formGroup]="userform">
     <label for="fname">First Name : </label>
-    <input type="text" name="fname"  formControlName="fname" > <br>
+    <input type="text" name="fname" id="fname" formControlName="fname"/> <br />
     <label for="lname">Last Name : </label>
-    <input type="text" name="lname"  formControlName="lname" > <br>
-    <label for="country">Country : </label>
-    <select name="country" formControlName="country"  >
-        <option value="India">India</option>
-        <option value="Singapore">Singapore</option>
-        <option value="Malasia">Malasia</option>
-        <option value="Russia">Russia</option>
-        <option value="Srilanka">Srilanka</option>
-    </select> <br>
-    <button *ngIf="!isEdit" type="button" (click)="addUser()">Add User</button>
-    <button *ngIf="isEdit" type="button" (click)="updateUser()">Update User</button>
+    <input type="text" name="lname" id="lname" formControlName="lname"/> <br />
+    <label for="dob">Date of Birth : </label>
+    <input type="text" name="dob" id="dob" formControlName="dob"/> <br />
+    <label for="email">Email id : </label>
+    <input type="text" name="email" id="email" formControlName="email"/> <br />
+    <label for="mobile">Mobile Number : </label>
+    <input type="text" name="mobile" id="mobile" formControlName="mobile"/> <br />
 </form>
-<hr>
-<app-mdchild [mdUsers]="users" (sendUser)="handleEdit($event)" (delUser)="handleDelUser($event)"></app-mdchild>
+<button type="button" (click)="addUser()" id="addUser">Add User</button>
+<app-mdchild [mdUsers]="users"></app-mdchild>

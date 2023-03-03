@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { CommonService } from '../common.service';
 
 @Component({
   selector: 'app-child',
@@ -6,18 +7,19 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./child.component.css']
 })
 export class ChildComponent {
+  @Input() allUsers:any = [];
+  @Output() sendEdit = new EventEmitter();
+  @Output() sendDelete = new EventEmitter();
+  constructor(private cs2:CommonService){
 
-  @Input() allusers:any[] = [];
-  @Output() editUser=new EventEmitter()
+  }
+  
+  editData(i:number){
+    this.sendEdit.emit(i);
+  }
 
-  ngInOnit(){
-    console.log(this.allusers)
-  }
-  checkProps(obj:any){
-    return Object.values(obj)
-  }
-  handleEdit(usr:any){
-    console.log(usr)
-    this.editUser.emit(usr)
+  deleteData(i:number){
+    //this.sendDelete.emit(i);
+    this.cs2.getAndSendData(i, 0);
   }
 }

@@ -1,6 +1,10 @@
 # App3Crud
 
+<<<<<<< Updated upstream
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.2.
+=======
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
+>>>>>>> Stashed changes
 
 ## Development server
 

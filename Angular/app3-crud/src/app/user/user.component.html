@@ -1,29 +1,34 @@
 <p>user works!</p>
-<button (click)="getAllUsers()">Get All Users</button>
-<form [formGroup]="userForm">
-   <label for="di">ID : </label>
-   <input type="text" name="id" formControlName="id" > <br>
-   <label for="email">Email : </label>
-   <input type="text" name="" formControlName="email" > <br>
-   <label for="">User Name : </label> 
-   <input type="text" name="" formControlName="username" > <br>
-   <label for="">Password : </label>
-   <input type="text" name="" formControlName="password" > <br>
-   <button *ngIf="!isEdit" (click)="createUser()">Add User</button>
-   <button *ngIf="isEdit" (click)="updateUser()">Update User</button>
+<button (click)="getAllUsers()">Get all users</button>
+<form [formGroup]="userform">
+    <label for="fname">First Name : </label>
+    <input type="text" name="fname" id="fname" formControlName="fname"/> <br />
+    <label for="lname">Last Name : </label>
+    <input type="text" name="lname" id="lname" formControlName="lname"/> <br />
+    <label for="dob">Date of Birth : </label>
+    <input type="text" name="dob" id="dob" formControlName="dob"/> <br />
+    <label for="email">Email id : </label>
+    <input type="text" name="email" id="email" formControlName="email"/> <br />
+    <label for="mobile">Mobile Number : </label>
+    <input type="text" name="mobile" id="mobile" formControlName="mobile"/> <br />
 </form>
-<br>
+<button type="button" (click)="addUser()" id="addUser" *ngIf="!editing">Add User</button>
+<button type="button" (click)="editUser()" id="editUser" *ngIf="editing">Edit User</button>
+<button type="button" (click)="resetForm()">Reset</button><br>
+
 <table border="1">
     <thead>
         <tr>
-            <th>ID </th>
-            <th>Email</th>
-            <th>Username</th>
-            <th>Password</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Date Of Birth</th>
+            <th>Email id</th>
+            <th>Mobile Number</th>
             <th>Edit</th>
             <th>Delete</th>
         </tr>
     </thead>
+<<<<<<< Updated upstream
     
 
     <tbody >
@@ -38,6 +43,17 @@
             <td>
                 <button (click)="deleteUser(usr)">Delete</button>
             </td>
+=======
+    <tbody id="usersTable" *ngFor="let user of allUsers; index as i">
+        <tr>
+            <td>{{user.fname}}</td>
+            <td>{{user.lname}}</td>
+            <td>{{user.dob}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.mobile}}</td>
+            <td><button (click)="editData(i)">Edit</button></td>
+            <td><button (click)="deleteData(user.id)">Delete</button></td>
+>>>>>>> Stashed changes
         </tr>
     </tbody>
 </table>

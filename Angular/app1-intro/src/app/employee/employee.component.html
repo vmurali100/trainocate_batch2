@@ -1,2 +1,11 @@
-<p>employee works! - As Child</p>
+<p>employee works!</p>
+<h1 style="color: blue;"><ng-content select="[top]"></ng-content></h1>
+<p>Middle</p>
+<i><ng-content select="[bottom]"></ng-content></i>
+<p>End</p>
+<label>Input name: </label>
+<input type="text" id="inputText"/>
+
 <button (click)="sendName()">Send Name</button>
+<button (click)="sendArrayFunction()">Send Array</button>
+<button (click)="sendObjectFunction()">Send Object</button>

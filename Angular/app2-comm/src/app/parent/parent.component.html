@@ -1,20 +1,18 @@
-<p>parent works!</p>
-
-<form #userForm="ngForm">
+<form #inputform="ngForm">
     <label for="fname">First Name : </label>
-    <input type="text" name="fname"  [(ngModel)]="userDetails.fname"> <br>
+    <input type="text" name="fname" id="fname" [(ngModel)]="user.fname"/> <br />
     <label for="lname">Last Name : </label>
-    <input type="text" name="lname"  [(ngModel)]="userDetails.lname"> <br>
-    <label for="country">Country : </label>
-    <select name="country" [(ngModel)]="userDetails.country">
-        <option value="India">India</option>
-        <option value="Singapore">Singapore</option>
-        <option value="Malasia">Malasia</option>
-        <option value="Russia">Russia</option>
-        <option value="Srilanka">Srilanka</option>
-    </select> <br>
-    <button type="button" (click)="addUser(userForm)">Add User</button>
+    <input type="text" name="lname" id="lname" [(ngModel)]="user.lname"/> <br />
+    <label for="dob">Date of Birth : </label>
+    <input type="text" name="dob" id="dob" [(ngModel)]="user.dob"/> <br />
+    <label for="email">Email id : </label>
+    <input type="text" name="email" id="email" [(ngModel)]="user.email"/> <br />
+    <label for="mobile">Mobile Number : </label>
+    <input type="text" name="mobile" id="mobile" [(ngModel)]="user.mobile"/> <br />
 </form>
-
-<hr>
-<app-child [allusers]="users" (editUser)="editUserInParent($event)"></app-child>
+<button type="button" (click)="addUser(inputform); inputform.resetForm()" id="addUser" *ngIf="!editing">Add User</button>
+<button type="button" (click)="editUser(inputform); inputform.resetForm()" id="editUser" *ngIf="editing">Edit User</button>
+<button type="button" (click)="inputform.resetForm()">Reset</button><br>
+<app-child [allUsers]="allUsers"
+(sendEdit)="editData($event)">
+</app-child>

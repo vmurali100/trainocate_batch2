@@ -11,10 +11,30 @@ export class Comp1Component {
   constructor(private cs:CommonService){
 
   }
-  message :string = "Welcome to Sibiling Components Communication !!! - Comp 1"
+  message :string = "Welcome to Sibiling Components Communication !!! - Comp 1";
+  arraystr:string[] = ["Hello 1", "Test 2", "Extra 3"];
+  obj = {test: "test", var2: "some var"};
+  receive:string = "";
+
+  ngOnInit() {
+    console.log('I am from ngOnInit');
+    this.cs.getSendBheaviour(0).subscribe((response) => {
+      response = JSON.stringify(response);
+      console.log('From Comp2 :', response);
+      this.receive = response
+    });
+  }
 
   sendMessageFromComp1(){
     console.log("sendMessageFromComp1 Trigged !!")
-    this.cs.getAndSendData(this.message)
+    this.cs.getAndSendData(this.message, 1)
+  }
+  sendArrayFromComp1(){
+    console.log("sendMessageFromComp1 Trigged !!")
+    this.cs.getAndSendData(this.arraystr, 1)
+  }
+  sendObjectFromComp1(){
+    console.log("sendMessageFromComp1 Trigged !!")
+    this.cs.getAndSendData(this.obj, 1)
   }
 }

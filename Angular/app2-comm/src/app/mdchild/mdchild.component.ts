@@ -1,18 +1,19 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-mdchild',
   templateUrl: './mdchild.component.html',
-  styleUrls: ['./mdchild.component.css'],
+  styleUrls: ['./mdchild.component.css']
 })
 export class MdchildComponent {
-  @Input() mdUsers: any[] = [];
-  @Output() delUser = new EventEmitter();
-  @Output() sendUser = new EventEmitter();
-  handleEdit(user: any, i: number) {
-    this.sendUser.emit({ user, i });
+  @Input() mdUsers:any[] = [];
+  @Output() sendEdit = new EventEmitter();
+  @Output() sendDelete = new EventEmitter();
+  editData(i:number){
+    this.sendEdit.emit(i);
   }
-  deleteUser(i: number) {
-    this.delUser.emit(i);
+
+  deleteData(i:number){
+    this.sendDelete.emit(i);
   }
 }

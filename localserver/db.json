@@ -1,34 +1,28 @@
 {
   "users": [
     {
-      "id": 11,
-      "email": "SWieland@consectetur.org",
-      "username": "LNuccio",
-      "password": "ainIC"
+      "fname": "fewfew",
+      "lname": "wffewe",
+      "dob": "vwwwefewfewfew",
+      "email": null,
+      "mobile": null,
+      "id": 2
     },
     {
-      "id": 12,
-      "email": "Savi@consectetur.org",
-      "username": "Savindar ",
-      "password": "Savi124"
+      "fname": "wfewfe",
+      "lname": null,
+      "dob": "fwfefewfew",
+      "email": null,
+      "mobile": null,
+      "id": 3
     },
     {
-      "id": 14,
-      "username": "Sub",
-      "email": "Subhjit@aenean.io",
-      "password": "11111"
-    },
-    {
-      "id": 13,
-      "email": "murali@consectetur.org",
-      "username": "Ram ",
-      "password": "Ravi"
-    },
-    {
-      "id": "15",
-      "username": "murali",
-      "email": "vmurali100@gmail.com",
-      "password": "1122"
+      "fname": null,
+      "lname": "wfwewefwfwef",
+      "dob": null,
+      "email": "fwefwfwfwef",
+      "mobile": null,
+      "id": 4
     }
   ],
   "products": [],

@@ -1,4 +1,11 @@
-<p>person works!- As Parent</p>
-<h2>Message Received From Child is : {{messageFromChild }}</h2>
-<hr>
-<app-employee (sendData)="getDataFromChild($event)"></app-employee>
+<p>person works!</p>
+<h2>Message Received from Child: {{message}}</h2>
+
+<app-employee 
+(sendData)="getDataFromChild($event)" 
+(sendArray)="getDataFromChild($event)"
+(sendObject)="getDataFromChild($event.role)"
+> 
+    <p top>Child Component</p>
+    <p bottom>This is the body</p>
+</app-employee>

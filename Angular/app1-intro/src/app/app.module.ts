@@ -9,7 +9,7 @@ import { StudentComponent } from './student/student.component';
 
 // Configuration
 @NgModule({
-  declarations: [AppComponent, StudentComponent, PersonComponent,EmployeeComponent],
+  declarations: [AppComponent, StudentComponent, PersonComponent, EmployeeComponent], 
   imports: [BrowserModule], // What are the dependencies required for this Module
   bootstrap: [AppComponent], // Which Compoent has to Render first
 })

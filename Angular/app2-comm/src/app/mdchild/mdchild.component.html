@@ -1,28 +1,25 @@
 <p>mdchild works!</p>
-
 <table border="1">
     <thead>
         <tr>
-            <th>First Name </th>
+            <th>First Name</th>
             <th>Last Name</th>
-            <th>Email</th>
+            <th>Date Of Birth</th>
+            <th>Email id</th>
+            <th>Mobile Number</th>
             <th>Edit</th>
             <th>Delete</th>
         </tr>
     </thead>
-    
-
-    <tbody >
-        <tr *ngFor="let usr of mdUsers;let i= index">
-            <td>{{usr.fname}}</td>
-            <td>{{usr.lname}}</td>
-            <td>{{usr.country}}</td>
-            <td>
-                <button (click)="handleEdit(usr,i)">Edit</button>
-            </td>
-            <td>
-                <button (click)="deleteUser(i)">Delete</button>
-            </td>
+    <tbody id="usersTable" *ngFor="let user of mdUsers; index as i">
+        <tr>
+            <td>{{user.fname}}</td>
+            <td>{{user.lname}}</td>
+            <td>{{user.dob}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.mobile}}</td>
+            <td><button (click)="editData(i)">Edit</button></td>
+            <td><button (click)="deleteData(i)">Delete</button></td>
         </tr>
     </tbody>
 </table>

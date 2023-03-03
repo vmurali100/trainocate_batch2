@@ -1,23 +1,16 @@
-<!-- <app-student 
-  [message]="myTitle" 
-  [users]="myUsers"
-  [person]="myPerson"
-  ></app-student> -->
+<!-- <app-student [message]="title"></app-student> -->
+<app-person></app-person>
 
 <!-- <h2>Welcome to Angular !!!</h2>
 
-<h2>My Project Name is : {{title}}</h2> -->
+ <h2>Welcome to Angular !!!</h2>
 
- <!-- <button (click)="showPerson()">Show Person</button> -->
-<!-- <ul > -->
-<!-- <li>Person First Name : {{person.fname}}</li>
-  <li>Person Last Name : {{person.lname}}</li> -->
-<!-- <p *ngIf="covertObjectIntoArray(person).length==0">Person Details Not Available !!</p>
-  <li *ngFor="let b of covertObjectIntoArray(person)">{{b}}</li>
-</ul> -->
+<ul >
+  <li>Person First Name : {{person.fname}}</li>
+  <li>Person Last Name : {{person.lname}}</li>
+  <li *ngFor="let b of covertObjectIntoArray(person); let c = index">{{b}}: {{c}}</li>
+</ul>
 
-<!-- <ul>
+<ul>
   <li *ngFor="let a of users">{{a}}</li>
 </ul> -->
-
-<app-person></app-person>
