@@ -1,0 +1,34 @@
+<div class="container">
+  
+  <table class="table" *ngIf="users.length>0">
+    <thead>
+      <tr>
+        <th *ngFor="let hval of formatObjectKeys(users[0])">{{hval}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usr of users">
+        <!-- <td *ngFor="let val of formatObject(usr)">{{val}}</td> -->
+        <td appMydir>{{usr.fname}}</td>
+        <td>{{usr.lname}}</td>
+        <td appMydir>{{usr.tel}}</td>
+        <td >{{usr.address}}</td>
+        <td>{{usr.city | custom | some}}</td>
+        <td
+        [ngClass]="{
+          'new-item':false , 
+          'in-progress-item':false,
+          'completed-item':usr.state === 'NM' || usr.state === 'PA' || usr.state === 'MS'
+        }"
+        >{{usr.state}}</td>
+        <!-- <td [ngClass]="usr.zip > 20000 ? 'danger':'' ">{{usr.zip | currency :"INR"}}</td> -->
+        <!-- <td [ngStyle]="usr.zip>60000 ? {'color':'red'}:{}">{{usr.zip | currency :"INR"}}</td> -->
+        <td [ngStyle]="{'color':usr.zip > 20000 ? 'red':''}">{{usr.zip | currency :"INR"}}</td>
+        <td>{{usr.x | date: 'mediumTime'}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button (click)="setClasses()">Set Classe</button>
+  <h3 [ngClass]="currentClasses">Hello from NG Classes heading !!</h3>
+</div>

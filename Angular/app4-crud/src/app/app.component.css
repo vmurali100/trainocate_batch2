@@ -1,0 +1,18 @@
+th {
+  text-transform: capitalize;
+}
+.danger {
+  color: white;
+  background: red;
+}
+.new-item {
+  background-color: yellow;
+}
+
+.in-progress-item {
+  background-color: orange;
+}
+
+.completed-item {
+  background-color: green;
+}
