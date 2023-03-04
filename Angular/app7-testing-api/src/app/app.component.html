@@ -1,0 +1,10 @@
+<button (click)="getUsers()">Get Users</button>
+<ul>
+  <li *ngFor="let usr of users">{{ usr.email }}</li>
+</ul>
+
+<button (click)="updateUsers()" id="update">Update Users</button>
+
+<p *ngFor="let usr of myUsers">
+{{usr.email}}
+</p>
